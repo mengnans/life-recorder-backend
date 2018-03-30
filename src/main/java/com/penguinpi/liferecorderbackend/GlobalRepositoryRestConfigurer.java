@@ -22,7 +22,7 @@ public class GlobalRepositoryRestConfigurer extends RepositoryRestConfigurerAdap
         config.getCorsRegistry()
                 .addMapping(CORS_BASE_PATTERN)
                 .allowedOrigins("http://localhost","http://localhost:3000","http://www.penguinpi.tk/","http://192.168.0.58:3000")
-                .allowedMethods("GET","POST")
+                .allowedMethods("GET","POST","PUT")
                 .allowedHeaders("Access-Control-Allow-Origin");
     }
 
