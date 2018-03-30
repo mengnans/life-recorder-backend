@@ -21,6 +21,5 @@ public class DatabaseLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        this.repository.save(new Record("Stone","20180221","do nothing"));
     }
 }

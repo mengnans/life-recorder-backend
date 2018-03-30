@@ -2,9 +2,7 @@ package com.penguinpi.liferecorderbackend;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author Mengnan Shi
@@ -13,18 +11,56 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@Table(name="life_Record")
 public class Record {
-    private @Id @GeneratedValue Long id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
     private String userName;
-    private String dateTime;
-    private String description;
+    private String dateTimeOfTheEvent;
+    private String descriptionOfTheEvent;
 
     private Record() {}
 
-    public Record(String userName, String dateTime, String description){
+    public Record(String userName, String dateTimeOfTheEvent, String descriptionOfTheEvent){
         this.userName = userName;
-        this.dateTime = dateTime;
-        this.description = description;
+        this.dateTimeOfTheEvent = dateTimeOfTheEvent;
+        this.descriptionOfTheEvent = descriptionOfTheEvent;
     }
 
+    @Column(name="id")
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Column(name="username")
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    @Column(name="dateTimeOfTheEvent")
+    public String getDateTimeOfTheEvent() {
+        return dateTimeOfTheEvent;
+    }
+
+    public void setDateTimeOfTheEvent(String dateTimeOfTheEvent) {
+        this.dateTimeOfTheEvent = dateTimeOfTheEvent;
+    }
+
+    @Column(name="descriptionOfTheEvent")
+    public String getDescriptionOfTheEvent() {
+        return descriptionOfTheEvent;
+    }
+
+    public void setDescriptionOfTheEvent(String descriptionOfTheEvent) {
+        this.descriptionOfTheEvent = descriptionOfTheEvent;
+    }
 }

@@ -1,6 +1,5 @@
 package com.penguinpi.liferecorderbackend;
 
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
  */
 
 @CrossOrigin("http://localhost:8081")
-@RepositoryRestResource
+@RepositoryRestResource(collectionResourceRel = "records", path = "records")
 public interface RecordRepository extends PagingAndSortingRepository<Record,Long> {
 
 }
